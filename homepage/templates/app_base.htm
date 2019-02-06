@@ -1,0 +1,32 @@
+<%inherit file="base.htm" />
+
+<%block name="navbar_items">
+<nav class="navbar">
+    <li class="nav-item"><a class="nav-link ${ 'active' if request.dmp.page == 'index' else '' }" href="/">Home</a></li>
+    <li class="nav-item"><a class="nav-link ${ 'active' if request.dmp.page == 'contact' else '' }" href="/contact/">Contact</a></li>
+    <li class="nav-item"><a class="nav-link ${ 'active' if request.dmp.page == 'about' else '' }" href="/about/">About</a></li>
+    <li class="nav-item">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+            Welcome, User
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/account/index/">Account</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/account/logout/">Logout</a> 
+        </div>
+    </li>
+</nav>
+    <%block name="navbar_items2">
+
+    </%block>
+</%block>
+
+<%block name="left_column">
+    <ul>
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link" href="/contact/">Contact</a></li>
+    </ul>
+    <%block name="left_column2">
+
+    </%block>
+</%block>

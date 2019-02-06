@@ -1,0 +1,32 @@
+main {
+  text-align: center;
+}
+
+h4.utc-time {
+  color: #3771A1;
+}
+
+header {
+  background-color: #264a8d;
+}
+
+main #right_block {
+  background-color: #3771A1;
+}
+main #center_block {
+  background-color: #f0ebeb;
+  padding: 0;
+}
+main #left_block {
+  background-color: #777788;
+}
+
+footer {
+  background-color: #1c1c30;
+}
+
+#usainbolt {
+  width: 75%;
+}
+
+/*# sourceMappingURL=index.scss.css.map */

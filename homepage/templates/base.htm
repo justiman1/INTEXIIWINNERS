@@ -1,0 +1,67 @@
+## this is the skeleton of all pages on in this app - it defines the basic html tags
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+
+        <title>Sprint 1 &mdash; <%block name="title"></%block></title>
+
+        ## add any site-wide scripts or CSS here; for example, jquery:
+        <script src="${ STATIC_URL }homepage/media/jquery-3.3.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="${ STATIC_URL }homepage/media/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+
+        ## render the static file links with the same name as this template
+        <script src="/django_mako_plus/dmp-common.min.js"></script>
+        ${ django_mako_plus.links(self) }
+
+        ## link for icon
+        <link rel="icon" type="image/png" href="${ STATIC_URL }homepage/media/byu.png">
+
+    </head>
+    <body>
+
+        <div id="maintenance_container">
+            <div id="maintenance_message" class="alert alert-danger center-block">The server is going offline tonight for two hours.</div>
+        </div>
+
+        <header id="header">
+
+            <img src="${ STATIC_URL }homepage/media/byu.png" alt="byu logo" id="image"/>
+                <br>
+                <ul class="nav nav-tabs justify-content-end">
+                    <%block name="navbar_items"></%block>
+                </ul>
+        </header>
+
+        <main>
+            <div id="left_block">
+                    <%block name="left_column">
+
+                    </%block>
+            </div>   
+
+            <div id="center_block">
+                <%block name="center_column">
+
+                </%block>
+            </div>  
+            
+            <div id="right_block">
+                <%block name="right_column">
+
+                </%block>
+            </div>   
+
+            
+ 
+        </main>
+
+        <footer>
+                <%! from datetime import datetime %>
+            <p>&copy; Copyright ${ datetime.now().strftime("%Y") }. All rights reserved</p>
+        </footer>
+
+    </body>
+</html>

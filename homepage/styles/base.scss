@@ -1,0 +1,116 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #777788;
+    background-color: rgb(37, 41, 41);
+}
+
+#maintenance_message {
+    position: absolute;
+    width: 27%;
+    left: 36.5%;
+    margin-top: 10px;
+    z-index: 100;
+    text-align: center;
+}
+
+.clearfix {
+    clear: both;
+}
+
+header {
+    margin-bottom: 3px;
+    padding-top: 17px;
+    text-align: center;
+    height: 100px;
+    color: white;
+    z-index: 1000;
+
+    #image {
+        position: absolute;
+        width: 95px;
+        left: 1px;
+        top: 1px;
+    }
+}
+
+header > .title {
+    display: inline-block;
+    color: #3771A1;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    vertical-align: middle;
+}
+
+main {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    color: white;
+
+    #right_block {
+        position: absolute;
+        right: 0;
+        width: 200px;
+        height: 100%;
+        bottom: 100px;
+        top: 0;
+        padding-top: 15px;
+    }
+    
+    #center_block {
+        margin-left: 203px;
+        margin-right: 203px;
+        color: black;
+        background-color: lightgrey;
+        padding: 20px;
+    }
+    
+    #left_block {
+        position: absolute;
+        left: 0;
+        width: 200px;
+        height: 100%;
+        bottom: 100px;
+        top: 0;
+    }
+
+    a {
+        color: white;
+    }
+    a:hover {
+        color: rgb(167, 167, 167);
+    }
+}
+
+footer {
+    position: absolute;
+    margin-top: 3px;
+    padding-top: 15px;
+    border-top: 1px solid #CCCCCC;
+    text-align: center;
+    width: 100%;
+    bottom: 0px;
+}
+
+header h1 {
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+header a {
+    color: white;
+}
+
+header a:hover {
+    color: rgb(167, 167, 167);
+}
+
+
+
+
+
+
