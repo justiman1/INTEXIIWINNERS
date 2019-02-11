@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1549466689.4782822
+_modified_time = 1549557587.2340026
 _enable_loop = True
 _template_filename = 'C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/homepage/templates/app_base.htm'
 _template_uri = 'app_base.htm'
@@ -30,16 +30,16 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def navbar_items2():
-            return render_navbar_items2(context._locals(__M_locals))
-        def navbar_items():
-            return render_navbar_items(context._locals(__M_locals))
-        self = context.get('self', UNDEFINED)
         def left_column():
             return render_left_column(context._locals(__M_locals))
         request = context.get('request', UNDEFINED)
         def left_column2():
             return render_left_column2(context._locals(__M_locals))
+        def navbar_items():
+            return render_navbar_items(context._locals(__M_locals))
+        self = context.get('self', UNDEFINED)
+        def navbar_items2():
+            return render_navbar_items2(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'navbar_items'):
@@ -59,20 +59,20 @@ def render_body(context,**pageargs):
 def render_navbar_items(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        def navbar_items2():
-            return render_navbar_items2(context)
-        request = context.get('request', UNDEFINED)
         def navbar_items():
             return render_navbar_items(context)
+        request = context.get('request', UNDEFINED)
         self = context.get('self', UNDEFINED)
+        def navbar_items2():
+            return render_navbar_items2(context)
         __M_writer = context.writer()
-        __M_writer('\r\n<nav class="navbar">\r\n    <li class="nav-item"><a class="nav-link ')
+        __M_writer('\r\n    <li class="nav-item"><a class="nav-link ')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( 'active' if request.dmp.page == 'index' else '' ))
         __M_writer('" href="/">Home</a></li>\r\n    <li class="nav-item"><a class="nav-link ')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( 'active' if request.dmp.page == 'contact' else '' ))
         __M_writer('" href="/contact/">Contact</a></li>\r\n    <li class="nav-item"><a class="nav-link ')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( 'active' if request.dmp.page == 'about' else '' ))
-        __M_writer('" href="/about/">About</a></li>\r\n    <li class="nav-item">\r\n        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">\r\n            Welcome, User\r\n        </a>\r\n        <div class="dropdown-menu" aria-labelledby="navbarDropdown">\r\n            <a class="dropdown-item" href="/account/index/">Account</a>\r\n            <div class="dropdown-divider"></div>\r\n            <a class="dropdown-item" href="/account/logout/">Logout</a> \r\n        </div>\r\n    </li>\r\n</nav>\r\n    ')
+        __M_writer('" href="/about/">About</a></li>\r\n    <li class="nav-item">\r\n        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">\r\n            Welcome, User\r\n        </a>\r\n        <div class="dropdown-menu" aria-labelledby="navbarDropdown">\r\n            <a class="dropdown-item" href="/account/index/">Account</a>\r\n            <div class="dropdown-divider"></div>\r\n            <a class="dropdown-item" href="/account/logout/">Logout</a> \r\n        </div>\r\n    </li>\r\n    ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'navbar_items2'):
             context['self'].navbar_items2(**pageargs)
         
@@ -128,6 +128,6 @@ def render_left_column2(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/homepage/templates/app_base.htm", "uri": "app_base.htm", "source_encoding": "utf-8", "line_map": {"29": 0, "44": 1, "49": 22, "59": 3, "69": 3, "70": 5, "71": 5, "72": 6, "73": 6, "74": 7, "75": 7, "80": 21, "86": 19, "92": 19, "98": 24, "106": 24, "111": 31, "117": 29, "123": 29, "129": 123}}
+{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/homepage/templates/app_base.htm", "uri": "app_base.htm", "source_encoding": "utf-8", "line_map": {"29": 0, "44": 1, "49": 20, "59": 3, "69": 3, "70": 4, "71": 4, "72": 5, "73": 5, "74": 6, "75": 6, "80": 19, "86": 17, "92": 17, "98": 22, "106": 22, "111": 29, "117": 27, "123": 27, "129": 123}}
 __M_END_METADATA
 """
