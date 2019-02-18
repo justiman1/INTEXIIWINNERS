@@ -101,7 +101,7 @@ WSGI_APPLICATION = 'sprint.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'fomo',
         'USER': 'postgres',
         'PASSWORD': 'tin-man-95',
