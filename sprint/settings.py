@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'account.User'
 
 # Application definition
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_mako_plus',
     'homepage',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -103,8 +105,8 @@ DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'fomo',
-        'USER': 'myprojectuser',
-        'PASSWORD': 'password',
+        'USER': 'postgres',
+        'PASSWORD': 'tin-man-9',
         'HOST': 'localhost',
         'PORT': '',
     }
