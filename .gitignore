@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+*.scss.css
+.vscode/
