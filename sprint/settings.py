@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_mako_plus',
-    'homepage',
     'account',
+    'homepage',
+
 ]
 
 MIDDLEWARE = [
@@ -105,8 +106,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'fomo',
-        'USER': 'postgres',
-        'PASSWORD': 'tin-man-95',
+        'USER': 'justi',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '',
     }
