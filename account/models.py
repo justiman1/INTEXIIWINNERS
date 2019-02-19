@@ -3,7 +3,8 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class User(AbstractUser):
-    birthdate = models.DateTimeField()
+    birthdate = models.DateTimeField(null=True)
+    favcolor = models.TextField(null=True)
 
 
     

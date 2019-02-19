@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1550361745.1853309
+_modified_time = 1550551076.233839
 _enable_loop = True
 _template_filename = 'C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/homepage/templates/app_base.htm'
 _template_uri = 'app_base.htm'
@@ -30,16 +30,14 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def left_column2():
-            return render_left_column2(context._locals(__M_locals))
-        def navbar_items2():
-            return render_navbar_items2(context._locals(__M_locals))
-        def left_column():
-            return render_left_column(context._locals(__M_locals))
-        self = context.get('self', UNDEFINED)
         def navbar_items():
             return render_navbar_items(context._locals(__M_locals))
-        request = context.get('request', UNDEFINED)
+        def left_column():
+            return render_left_column(context._locals(__M_locals))
+        def navbar_items2():
+            return render_navbar_items2(context._locals(__M_locals))
+        def left_column2():
+            return render_left_column2(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'navbar_items'):
@@ -59,20 +57,12 @@ def render_body(context,**pageargs):
 def render_navbar_items(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        def navbar_items2():
-            return render_navbar_items2(context)
         def navbar_items():
             return render_navbar_items(context)
-        self = context.get('self', UNDEFINED)
-        request = context.get('request', UNDEFINED)
+        def navbar_items2():
+            return render_navbar_items2(context)
         __M_writer = context.writer()
-        __M_writer('\r\n    <li class="nav-item"><a class="nav-link ')
-        __M_writer(django_mako_plus.ExpressionPostProcessor(self)( 'active' if request.dmp.page == 'index' else '' ))
-        __M_writer('" href="/">Home</a></li>\r\n    <li class="nav-item"><a class="nav-link ')
-        __M_writer(django_mako_plus.ExpressionPostProcessor(self)( 'active' if request.dmp.page == 'contact' else '' ))
-        __M_writer('" href="/contact/">Contact</a></li>\r\n    <li class="nav-item"><a class="nav-link ')
-        __M_writer(django_mako_plus.ExpressionPostProcessor(self)( 'active' if request.dmp.page == 'about' else '' ))
-        __M_writer('" href="/about/">About</a></li>\r\n    <li class="nav-item">\r\n        <div class="dropdown">\r\n            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\r\n              Welcome, User\r\n            </button>\r\n            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">\r\n                <a class="dropdown-item" href="/account/index/">Account</a>\r\n                <div class="dropdown-divider"></div>\r\n                <a class="dropdown-item" href="/account/logout/">Logout</a> \r\n            </div>\r\n          </div>\r\n    </li>\r\n    ')
+        __M_writer('\r\n    \r\n    ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'navbar_items2'):
             context['self'].navbar_items2(**pageargs)
         
@@ -98,10 +88,10 @@ def render_navbar_items2(context,**pageargs):
 def render_left_column(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        def left_column():
-            return render_left_column(context)
         def left_column2():
             return render_left_column2(context)
+        def left_column():
+            return render_left_column(context)
         __M_writer = context.writer()
         __M_writer('\r\n    <ul>\r\n        <li><a class="nav-link" href="/">Home</a></li>\r\n        <li><a class="nav-link" href="/contact/">Contact</a></li>\r\n    </ul>\r\n    ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'left_column2'):
@@ -128,6 +118,6 @@ def render_left_column2(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/homepage/templates/app_base.htm", "uri": "app_base.htm", "source_encoding": "utf-8", "line_map": {"29": 0, "44": 1, "49": 22, "59": 3, "69": 3, "70": 4, "71": 4, "72": 5, "73": 5, "74": 6, "75": 6, "80": 21, "86": 19, "92": 19, "98": 24, "106": 24, "111": 31, "117": 29, "123": 29, "129": 123}}
+{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/homepage/templates/app_base.htm", "uri": "app_base.htm", "source_encoding": "utf-8", "line_map": {"29": 0, "42": 1, "47": 8, "57": 3, "65": 3, "70": 7, "76": 5, "82": 5, "88": 10, "96": 10, "101": 17, "107": 15, "113": 15, "119": 113}}
 __M_END_METADATA
 """
