@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1550550065.7652829
+_modified_time = 1550676993.505139
 _enable_loop = True
 _template_filename = 'C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/homepage/templates/base.htm'
 _template_uri = '/homepage/templates/base.htm'
@@ -21,19 +21,19 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def center_column():
-            return render_center_column(context._locals(__M_locals))
-        request = context.get('request', UNDEFINED)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
-        self = context.get('self', UNDEFINED)
-        def navbar_items():
-            return render_navbar_items(context._locals(__M_locals))
         def left_column():
             return render_left_column(context._locals(__M_locals))
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         def right_column():
             return render_right_column(context._locals(__M_locals))
+        self = context.get('self', UNDEFINED)
+        def center_column():
+            return render_center_column(context._locals(__M_locals))
         def title():
             return render_title(context._locals(__M_locals))
+        request = context.get('request', UNDEFINED)
+        def navbar_items():
+            return render_navbar_items(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('<!DOCTYPE html>\r\n<html>\r\n    <meta charset="UTF-8">\r\n    <head>\r\n\r\n        <title>Sprint 1 &mdash; ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'title'):
