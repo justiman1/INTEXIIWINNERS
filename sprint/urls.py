@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.urls import path, include
 
 urlpatterns = [
     # the built-in Django administrator
@@ -26,6 +25,5 @@ urlpatterns = [
     # the DMP router - this should normally be the last URL listed
     url('', include('django_mako_plus.urls')),
 
-    path('account/', include('django.contrib.auth.urls')),
 
 ]
