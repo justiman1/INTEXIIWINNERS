@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1550987533.1011024
+_modified_time = 1551054358.2064476
 _enable_loop = True
 _template_filename = 'C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/homepage/templates/base.htm'
 _template_uri = '/homepage/templates/base.htm'
@@ -21,20 +21,20 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        request = context.get('request', UNDEFINED)
         def center_column():
             return render_center_column(context._locals(__M_locals))
         def left_column():
             return render_left_column(context._locals(__M_locals))
-        def title():
-            return render_title(context._locals(__M_locals))
-        request = context.get('request', UNDEFINED)
         def navbar_items():
             return render_navbar_items(context._locals(__M_locals))
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        def title():
+            return render_title(context._locals(__M_locals))
         def right_column():
             return render_right_column(context._locals(__M_locals))
-        self = context.get('self', UNDEFINED)
         user = context.get('user', UNDEFINED)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        self = context.get('self', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('<!DOCTYPE html>\r\n<html>\r\n    <meta charset="UTF-8">\r\n    <head>\r\n\r\n        <title>Sprint 1 &mdash; ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'title'):
@@ -65,14 +65,12 @@ def render_body(context,**pageargs):
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( 'active' if request.dmp.page == 'contact' else '' ))
         __M_writer('" href="/contact/">Contact</a></li>\r\n                            <li class="nav-item"><a class="nav-link ')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( 'active' if request.dmp.page == 'about' else '' ))
-        __M_writer('" href="/about/">About</a></li>\r\n                            <li class="nav-item">\r\n                                <div class="dropdown">\r\n                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\r\n                                      Account\r\n                                    </button>\r\n                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">\r\n                                        <a class="dropdown-item" href="')
-        __M_writer(django_mako_plus.ExpressionPostProcessor(self)( '/account/logout' if user.is_authenticated else '/account/login' ))
-        __M_writer('">\r\n')
+        __M_writer('" href="/about/">About</a></li>\r\n                            <li class="nav-item">\r\n')
         if user.is_authenticated:
-            __M_writer('                                            Logout\r\n')
+            __M_writer('                                    <div class="dropdown">\r\n                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\r\n                                        Account\r\n                                        </button>\r\n                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">\r\n                                                <a class="dropdown-item" href="/account/logout/">Logout</a>\r\n                                        </div>\r\n                                    </div>\r\n')
         else:
-            __M_writer('                                            Login\r\n')
-        __M_writer('                                        </a> \r\n                                    </div>\r\n                                  </div>\r\n                            </li>\r\n                    </nav>\r\n                </ul>\r\n        </header>\r\n\r\n        <main>\r\n            <div id="left_block">\r\n                    ')
+            __M_writer('                                    <a class="nav-link" href="/account/login/">Login</a></li>\r\n')
+        __M_writer('                            </li>\r\n                    </nav>\r\n                </ul>\r\n        </header>\r\n\r\n        <main>\r\n            <div id="left_block">\r\n                    ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'left_column'):
             context['self'].left_column(**pageargs)
         
@@ -157,6 +155,6 @@ def render_right_column(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/homepage/templates/base.htm", "uri": "/homepage/templates/base.htm", "source_encoding": "utf-8", "line_map": {"18": 84, "20": 0, "39": 2, "44": 7, "45": 10, "46": 10, "47": 10, "48": 13, "49": 13, "50": 16, "51": 17, "52": 17, "53": 20, "54": 20, "55": 20, "56": 31, "57": 31, "62": 36, "63": 37, "64": 37, "65": 38, "66": 38, "67": 39, "68": 39, "69": 46, "70": 46, "71": 47, "72": 48, "73": 49, "74": 50, "75": 52, "80": 64, "85": 70, "90": 76, "91": 84, "92": 85, "93": 85, "99": 7, "110": 35, "116": 35, "122": 62, "128": 62, "134": 68, "140": 68, "146": 74, "152": 74, "158": 152}}
+{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/homepage/templates/base.htm", "uri": "/homepage/templates/base.htm", "source_encoding": "utf-8", "line_map": {"18": 82, "20": 0, "39": 2, "44": 7, "45": 10, "46": 10, "47": 10, "48": 13, "49": 13, "50": 16, "51": 17, "52": 17, "53": 20, "54": 20, "55": 20, "56": 31, "57": 31, "62": 36, "63": 37, "64": 37, "65": 38, "66": 38, "67": 39, "68": 39, "69": 41, "70": 42, "71": 50, "72": 51, "73": 53, "78": 62, "83": 68, "88": 74, "89": 82, "90": 83, "91": 83, "97": 7, "108": 35, "114": 35, "120": 60, "126": 60, "132": 66, "138": 66, "144": 72, "150": 72, "156": 150}}
 __M_END_METADATA
 """

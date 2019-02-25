@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1550549952.136905
+_modified_time = 1551056764.4774895
 _enable_loop = True
 _template_filename = 'C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/account/templates/app_base.htm'
 _template_uri = 'app_base.htm'
@@ -49,7 +49,7 @@ def render_navbar_items(context,**pageargs):
         def navbar_items():
             return render_navbar_items(context)
         __M_writer = context.writer()
-        __M_writer('\r\n    app base for account\r\n')
+        __M_writer('\r\n\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
