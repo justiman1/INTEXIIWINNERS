@@ -1,0 +1,21 @@
+<%inherit file="app_base.htm" />
+
+<%block name="title">Home</%block>
+
+<%block name="left_column2">
+<br>
+<p>This is a fun project used to help us learn django-mako-plus</p>
+<br>
+<p>This content will only appear on the homepage.</p>
+</%block>
+
+<%block name="center_column">
+<br>
+<h1>Welcome to Sprint 1!</h1>
+<br>
+<br>
+<p>Please enjoy this picture of Usain Bolt, the world's fastest sprinter.</p>
+<img src="${ STATIC_URL }homepage/media/UsainBolt.jpg" alt="Usain Bolt" id="usainbolt"/>
+<p>This image comes from <a href="https://i.ytimg.com/vi/Q8FaDru7sBU/maxresdefault.jpg" style="color:black">https://i.ytimg.com/vi/Q8FaDru7sBU/maxresdefault.jpg</a></p>
+<br>
+</%block>
