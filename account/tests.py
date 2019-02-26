@@ -17,6 +17,15 @@ class AccountTests(TestCase):
         self.homer.birthdate = datetime(2000, 1, 1)
         self.homer.save()
 
+    def test_user(self):
+        u = amod.User()
+        u.username = 'bart'
+        u.first_name = 'Bart'
+        u.last_name = 'Simpson'
+        u.set_password('eatmyshorts')
+        u.save()
+        u.check_password('eatmyshorts')
+
     def test_user_login(self):
         credentials = {
             'username': 'homer2',
@@ -51,7 +60,7 @@ class AccountTests(TestCase):
     def test_user_get(self):
         u1 = amod.User.objects.get(id=2)
         self.assertEqual(u1.username, 'homer', msg="Username should have been homer")
-        self.assertEqual(u1.check_password(''), message="Wrong password")
+        self.assertEqual(u1.check_password(''), msg="Wrong password")
 
     def test_user_create(self):
         u1 = amod.User()
