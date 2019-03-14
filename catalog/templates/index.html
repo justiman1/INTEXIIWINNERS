@@ -1,0 +1,15 @@
+<%inherit file="app_base.htm" />
+
+<%block name="title">Catalog</%block>
+
+<%block name="center_column">
+
+    <h1 class="text-center">${ 'Products' if category is None else category.name }</h1>
+
+    <div id="catalog">
+        %for product in Products:
+            <span class="product-container" data-product-id="${ product.id }"></span>
+        %endfor
+    </div>
+
+</%block>

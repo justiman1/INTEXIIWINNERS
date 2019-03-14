@@ -1,0 +1,20 @@
+<%inherit file="/homepage/templates/base.htm" />
+<%! from catalog import models as cmod %>
+
+<%block name="left_column">
+<ul id="category_list">
+    <li>
+        <a href="/catalog/index">All products</a>
+    </li>
+    <li>
+        <a href="/catalog/index/1">Food</a>
+    </li>
+    <li>
+        <a href="/catalog/index/2">Games</a>
+    </li>
+    <li>
+        <a href="/catalog/index/3">Home and Office</a>
+    </li>
+</ul>
+
+</%block>
