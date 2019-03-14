@@ -18,6 +18,8 @@ def process_request(request):
     #     u.favcolor = 'blue'
     #     u.save()
 
+    
+
 
     utc_time = datetime.utcnow()
     context = {
