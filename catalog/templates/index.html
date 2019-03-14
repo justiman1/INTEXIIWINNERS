@@ -7,9 +7,17 @@
     <h1 class="text-center">${ 'Products' if category is None else category.name }</h1>
 
     <div id="catalog">
-        %for product in Products:
+        %for product in products:
             <span class="product-container" data-product-id="${ product.id }"></span>
         %endfor
     </div>
 
+    <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              %for i in range(numpages):
+              <li class="page-item"><a class="page-link" href="${i + 1}">${i + 1}</a></li>
+              %endfor
+            </ul>
+           </nav>
+           
 </%block>
