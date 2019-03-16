@@ -3,21 +3,17 @@
 <%block name="title">Catalog</%block>
 
 <%block name="center_column">
-
+<div class="text-center">
     <h1 class="text-center">${ 'Products' if category is None else category.name }</h1>
-
     <div id="catalog">
         %for product in products:
             <span class="product-container" data-product-id="${ product.id }"></span>
         %endfor
     </div>
-
-    <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              %for i in range(numpages):
-              <li class="page-item"><a class="page-link" href="${i + 1}">${i + 1}</a></li>
-              %endfor
-            </ul>
-           </nav>
-           
+</div>
+    <div id="paginator" class="text-center">
+        <br>
+        <a class="btn btn-secondary" href="/catalog/index/${ category.id if category is not None else 0 }/${ page if page == 1 else (page - 1) }">Back</a>
+        <a class="btn btn-secondary" href="/catalog/index/${ category.id if category is not None else 0 }/${ page if page == numpages else (page + 1) }">Next</a>
+    </div>
 </%block>

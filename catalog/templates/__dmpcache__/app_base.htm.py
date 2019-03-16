@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1552534108.8215106
+_modified_time = 1552690645.880837
 _enable_loop = True
 _template_filename = 'C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/catalog/templates/app_base.htm'
 _template_uri = 'app_base.htm'
@@ -34,6 +34,8 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         def left_column():
             return render_left_column(context._locals(__M_locals))
+        category = context.get('category', UNDEFINED)
+        self = context.get('self', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
         __M_writer('\r\n\r\n')
@@ -51,8 +53,21 @@ def render_left_column(context,**pageargs):
     try:
         def left_column():
             return render_left_column(context)
+        category = context.get('category', UNDEFINED)
+        self = context.get('self', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n<ul id="category_list">\r\n    <li>\r\n        <a href="/catalog/index">All products</a>\r\n    </li>\r\n    <li>\r\n        <a href="/catalog/index/1">Food</a>\r\n    </li>\r\n    <li>\r\n        <a href="/catalog/index/2">Games</a>\r\n    </li>\r\n    <li>\r\n        <a href="/catalog/index/3">Home and Office</a>\r\n    </li>\r\n</ul>\r\n\r\n')
+        __M_writer('\r\n<ul id="category_list">\r\n    <li class="')
+        __M_writer(django_mako_plus.ExpressionPostProcessor(self)( 'active' if category is None else '' ))
+        __M_writer('"><a href="/catalog/index/">All Products</a></li>\r\n')
+        for cat in cmod.Category.objects.order_by('name'):
+            __M_writer('        <li class="')
+            __M_writer(django_mako_plus.ExpressionPostProcessor(self)( 'active' if category == cat else '' ))
+            __M_writer('"><a href="/catalog/index/')
+            __M_writer(django_mako_plus.ExpressionPostProcessor(self)( cat.id ))
+            __M_writer('/">')
+            __M_writer(django_mako_plus.ExpressionPostProcessor(self)( cat.name ))
+            __M_writer('</a></li>\r\n')
+        __M_writer('</ul>\r\n\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -60,6 +75,6 @@ def render_left_column(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/catalog/templates/app_base.htm", "uri": "app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "31": 0, "38": 1, "39": 2, "49": 4, "55": 4, "61": 55}}
+{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/catalog/templates/app_base.htm", "uri": "app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "31": 0, "40": 1, "41": 2, "51": 4, "59": 4, "60": 6, "61": 6, "62": 7, "63": 8, "64": 8, "65": 8, "66": 8, "67": 8, "68": 8, "69": 8, "70": 10, "76": 70}}
 __M_END_METADATA
 """

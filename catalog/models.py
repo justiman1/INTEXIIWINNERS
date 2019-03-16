@@ -36,7 +36,8 @@ class Product(models.Model):
         for p in pimages:
             urls.append(p.image_url())
         if(len(urls) == 0):
-            return settings.STATIC_URL + "catalog/media/products/image_unavailable.gif"
+            urls.append(settings.STATIC_URL + "catalog/media/products/image_unavailable.gif")
+            return urls
         else:
             return urls
 

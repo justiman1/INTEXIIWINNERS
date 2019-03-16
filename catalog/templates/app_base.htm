@@ -3,18 +3,10 @@
 
 <%block name="left_column">
 <ul id="category_list">
-    <li>
-        <a href="/catalog/index">All products</a>
-    </li>
-    <li>
-        <a href="/catalog/index/1">Food</a>
-    </li>
-    <li>
-        <a href="/catalog/index/2">Games</a>
-    </li>
-    <li>
-        <a href="/catalog/index/3">Home and Office</a>
-    </li>
+    <li class="${ 'active' if category is None else '' }"><a href="/catalog/index/">All Products</a></li>
+    %for cat in cmod.Category.objects.order_by('name'):
+        <li class="${ 'active' if category == cat else '' }"><a href="/catalog/index/${ cat.id }/">${ cat.name }</a></li>
+    %endfor
 </ul>
 
 </%block>

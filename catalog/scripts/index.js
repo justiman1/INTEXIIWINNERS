@@ -6,8 +6,8 @@ $((function(context) {
             var pid = $(container).attr('data-product-id');
             $.ajax({
                 url: "/catalog/product.tile/" + pid,
-            }).done(function(data){
-                $('#cooltitle').html(data);
+            }).done(function(content){
+                $(container).html(content);
             });
         });
 

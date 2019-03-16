@@ -1,0 +1,19 @@
+<%inherit file="app_base.htm" />
+
+<%block name="title">${ product.name }</%block>
+
+<%block name="center_column">
+    <div id="catalog">
+        <div class="product-tile">
+            %for image in product.images_url():
+                <img src="${ image }" class="product-image">
+            %endfor
+
+
+            <h3 class="product-name">${ product.name }</h3>
+            <p class="product-price">$${ product.price }</p>
+            ${ product.description}
+        </div> 
+
+    </div>
+</%block>
