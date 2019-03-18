@@ -5,14 +5,14 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1552711950.8677294
+_modified_time = 1552918711.9551287
 _enable_loop = True
 _template_filename = 'C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/catalog/templates/product.tile.html'
 _template_uri = 'product.tile.html'
 _source_encoding = 'utf-8'
 import django_mako_plus
 import django.utils.html
-_exports = ['title', 'content']
+_exports = ['content']
 
 
 def _mako_get_namespace(context, name):
@@ -30,19 +30,12 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def title():
-            return render_title(context._locals(__M_locals))
         self = context.get('self', UNDEFINED)
         product = context.get('product', UNDEFINED)
         def content():
             return render_content(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('<!DOCTYPE html>\r\n')
-        __M_writer('\r\n\r\n')
-        if 'parent' not in context._data or not hasattr(context._data['parent'], 'title'):
-            context['self'].title(**pageargs)
-        
-
         __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
@@ -53,27 +46,13 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-def render_title(context,**pageargs):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        def title():
-            return render_title(context)
-        self = context.get('self', UNDEFINED)
-        product = context.get('product', UNDEFINED)
-        __M_writer = context.writer()
-        __M_writer(django_mako_plus.ExpressionPostProcessor(self)( product.name ))
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        self = context.get('self', UNDEFINED)
         product = context.get('product', UNDEFINED)
         def content():
             return render_content(context)
-        self = context.get('self', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n        <a href="/catalog/product/')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( product.id ))
@@ -91,6 +70,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/catalog/templates/product.tile.html", "uri": "product.tile.html", "source_encoding": "utf-8", "line_map": {"29": 0, "40": 1, "41": 2, "46": 4, "56": 4, "64": 4, "70": 6, "78": 6, "79": 7, "80": 7, "81": 9, "82": 9, "83": 10, "84": 10, "85": 11, "86": 11, "92": 86}}
+{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/catalog/templates/product.tile.html", "uri": "product.tile.html", "source_encoding": "utf-8", "line_map": {"29": 0, "38": 1, "39": 2, "49": 4, "57": 4, "58": 5, "59": 5, "60": 7, "61": 7, "62": 8, "63": 8, "64": 9, "65": 9, "71": 65}}
 __M_END_METADATA
 """

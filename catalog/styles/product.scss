@@ -2,6 +2,10 @@
     text-align: center;
 }
 
+.small-image {
+    width: 150px;
+}
+
 .product-image {
     margin: auto;
     border: solid 1px black;
@@ -12,3 +16,7 @@
     text-align: center;
 }
 
+.subimage{
+    display: inline-block;
+    vertical-align: top;
+}

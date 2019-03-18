@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1552711948.461592
+_modified_time = 1552920031.18794
 _enable_loop = True
 _template_filename = 'C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/catalog/templates/product.html'
 _template_uri = 'product.html'
@@ -30,11 +30,11 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        def center_column():
+            return render_center_column(context._locals(__M_locals))
         def title():
             return render_title(context._locals(__M_locals))
         self = context.get('self', UNDEFINED)
-        def center_column():
-            return render_center_column(context._locals(__M_locals))
         product = context.get('product', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n\r\n')
@@ -69,16 +69,21 @@ def render_title(context,**pageargs):
 def render_center_column(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        product = context.get('product', UNDEFINED)
-        self = context.get('self', UNDEFINED)
         def center_column():
             return render_center_column(context)
+        self = context.get('self', UNDEFINED)
+        product = context.get('product', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n    <div id="catalog">\r\n        <div class="product-tile">\r\n')
         for image in product.images_url():
-            __M_writer('                <img src="')
-            __M_writer(django_mako_plus.ExpressionPostProcessor(self)( image ))
-            __M_writer('" class="product-image">\r\n')
+            if image == product.images_url()[0]:
+                __M_writer('                    <img src="')
+                __M_writer(django_mako_plus.ExpressionPostProcessor(self)( image ))
+                __M_writer('" class="product-image">\r\n')
+            else:
+                __M_writer('                    <div class="subimage">\r\n                        <img src="')
+                __M_writer(django_mako_plus.ExpressionPostProcessor(self)( image ))
+                __M_writer('" class="small-image">\r\n                    </div>\r\n')
         __M_writer('\r\n\r\n            <h3 class="product-name">')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( product.name ))
         __M_writer('</h3>\r\n            <p class="product-price">$')
@@ -93,6 +98,6 @@ def render_center_column(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/catalog/templates/product.html", "uri": "product.html", "source_encoding": "utf-8", "line_map": {"29": 0, "40": 1, "45": 3, "55": 3, "63": 3, "69": 5, "77": 5, "78": 8, "79": 9, "80": 9, "81": 9, "82": 11, "83": 13, "84": 13, "85": 14, "86": 14, "87": 15, "88": 15, "94": 88}}
+{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/catalog/templates/product.html", "uri": "product.html", "source_encoding": "utf-8", "line_map": {"29": 0, "40": 1, "45": 3, "55": 3, "63": 3, "69": 5, "77": 5, "78": 8, "79": 9, "80": 10, "81": 10, "82": 10, "83": 11, "84": 12, "85": 13, "86": 13, "87": 17, "88": 19, "89": 19, "90": 20, "91": 20, "92": 21, "93": 21, "99": 93}}
 __M_END_METADATA
 """
