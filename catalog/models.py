@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.urls import include, path
 from django.contrib.staticfiles.templatetags.staticfiles import static
+from decimal import Decimal
 
 # Create your models here.
 class Category(models.Model):
@@ -47,6 +48,17 @@ class ProductImage(models.Model):
 
     def image_url(self):
     # return an absolute URL to this image. 
-    # The return will be something like: `settings.STATIC_URL + "catalog/media/products/rustic-violin.jpg"`. 
-    # If no images available, return something like: `settings.STATIC_URL + "catalog/media/products/notfound.jpg"
         return settings.STATIC_URL + "catalog/media/products/" + self.filename
+
+
+# ************* SPRINT 4 ********************
+# Sale Class
+
+class Sale(models.Model):
+        user = models.ForeignKey("account.User", on_delete=models.PROTECT)
+        created = models.DateTimeField(auto_now_add=True)
+        purchased = models.DateTimeField(null=True, default=None)
+        subtotal = models.DecimalField(max_digits=7, decimal_places=2, default=Decimal(0))
+        tax = models.DecimalField(max_digits=7, decimal_places=2, default=Decimal(0))
+        total = models.DecimalField(max_digits=7, decimal_places=2, default=Decimal(0))
+        charge_id = models.TextField(null=True, default=None)   # successful charge id from stripe
