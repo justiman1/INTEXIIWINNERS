@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1552920031.18794
+_modified_time = 1553814093.771547
 _enable_loop = True
 _template_filename = 'C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/catalog/templates/product.html'
 _template_uri = 'product.html'
@@ -30,11 +30,12 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        self = context.get('self', UNDEFINED)
+        form = context.get('form', UNDEFINED)
         def center_column():
             return render_center_column(context._locals(__M_locals))
         def title():
             return render_title(context._locals(__M_locals))
-        self = context.get('self', UNDEFINED)
         product = context.get('product', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n\r\n')
@@ -57,8 +58,8 @@ def render_title(context,**pageargs):
     try:
         def title():
             return render_title(context)
-        self = context.get('self', UNDEFINED)
         product = context.get('product', UNDEFINED)
+        self = context.get('self', UNDEFINED)
         __M_writer = context.writer()
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( product.name ))
         return ''
@@ -71,8 +72,9 @@ def render_center_column(context,**pageargs):
     try:
         def center_column():
             return render_center_column(context)
-        self = context.get('self', UNDEFINED)
         product = context.get('product', UNDEFINED)
+        form = context.get('form', UNDEFINED)
+        self = context.get('self', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n    <div id="catalog">\r\n        <div class="product-tile">\r\n')
         for image in product.images_url():
@@ -90,7 +92,9 @@ def render_center_column(context,**pageargs):
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( product.price ))
         __M_writer('</p>\r\n            ')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( product.description))
-        __M_writer('\r\n        </div> \r\n\r\n    </div>\r\n')
+        __M_writer('\r\n        </div> \r\n\r\n        <!--Form here-->\r\n<br>\r\n        <div class="center">\r\n            <form action="" method="post">\r\n                ')
+        __M_writer(django_mako_plus.ExpressionPostProcessor(self)( form ))
+        __M_writer('\r\n                <input type="submit" value="Buy Now">\r\n            </form>\r\n        </div>\r\n\r\n    </div>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -98,6 +102,6 @@ def render_center_column(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/catalog/templates/product.html", "uri": "product.html", "source_encoding": "utf-8", "line_map": {"29": 0, "40": 1, "45": 3, "55": 3, "63": 3, "69": 5, "77": 5, "78": 8, "79": 9, "80": 10, "81": 10, "82": 10, "83": 11, "84": 12, "85": 13, "86": 13, "87": 17, "88": 19, "89": 19, "90": 20, "91": 20, "92": 21, "93": 21, "99": 93}}
+{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/catalog/templates/product.html", "uri": "product.html", "source_encoding": "utf-8", "line_map": {"29": 0, "41": 1, "46": 3, "56": 3, "64": 3, "70": 5, "79": 5, "80": 8, "81": 9, "82": 10, "83": 10, "84": 10, "85": 11, "86": 12, "87": 13, "88": 13, "89": 17, "90": 19, "91": 19, "92": 20, "93": 20, "94": 21, "95": 21, "96": 28, "97": 28, "103": 97}}
 __M_END_METADATA
 """

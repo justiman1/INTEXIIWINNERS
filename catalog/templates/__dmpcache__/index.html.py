@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1552711753.9087555
+_modified_time = 1553810430.099951
 _enable_loop = True
 _template_filename = 'C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/catalog/templates/index.html'
 _template_uri = 'index.html'
@@ -30,15 +30,15 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        numpages = context.get('numpages', UNDEFINED)
-        self = context.get('self', UNDEFINED)
+        products = context.get('products', UNDEFINED)
+        page = context.get('page', UNDEFINED)
+        category = context.get('category', UNDEFINED)
         def center_column():
             return render_center_column(context._locals(__M_locals))
+        numpages = context.get('numpages', UNDEFINED)
         def title():
             return render_title(context._locals(__M_locals))
-        page = context.get('page', UNDEFINED)
-        products = context.get('products', UNDEFINED)
-        category = context.get('category', UNDEFINED)
+        self = context.get('self', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'title'):
@@ -71,13 +71,13 @@ def render_title(context,**pageargs):
 def render_center_column(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        numpages = context.get('numpages', UNDEFINED)
-        self = context.get('self', UNDEFINED)
-        def center_column():
-            return render_center_column(context)
         products = context.get('products', UNDEFINED)
         page = context.get('page', UNDEFINED)
         category = context.get('category', UNDEFINED)
+        def center_column():
+            return render_center_column(context)
+        numpages = context.get('numpages', UNDEFINED)
+        self = context.get('self', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n<div class="text-center">\r\n    <h1 class="text-center">')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( 'Products' if category is None else category.name ))

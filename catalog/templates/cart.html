@@ -1,0 +1,45 @@
+<%inherit file="app_base.htm" />
+
+<%block name="title">Catalog</%block>
+
+<%block name="center_column">
+
+<table>
+    <tr>
+        <td>Product Image</td>
+        <td>Product Name</td>
+        <td>Quantity</td>
+        <td>Price</td>
+        <td>Extended</td>
+        <td>Actions</td>
+    </tr>
+    %for item in SI:
+        <tr>
+            <td><img src="${ item.product.image_url(item.product.images_url()) }" class="cart_image"></td>
+            <td>${ item.product.name }</td>
+            <td>${ item.quantity }</td>
+            <td>${ item.price }</td>
+            <td>${ item.price * item.quantity }</td>
+            <td><a href="/catalog/remove/${ item.id }" class="remove">Remove</td>
+        </tr>
+    %endfor
+    <tr>
+        <td></td>
+        <td>Tax</td>
+        <td></td>
+        <td></td>
+        <td>${ cart.tax }</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Total</td>
+        <td></td>
+        <td></td>
+        <td>${ cart.total }</td>
+        <td></td>
+    </tr>
+</table>
+
+<a href="/catalog/checkout/" class="btn btn-primary">Check Out</a>
+</%block>

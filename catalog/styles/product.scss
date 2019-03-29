@@ -16,7 +16,16 @@
     text-align: center;
 }
 
-.subimage{
+.subimage {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: bottom;
+}
+
+.small-image:hover{
+    width: 300px;
+    border: solid 1px black;
+}
+
+.center{
+    text-align: center;
 }

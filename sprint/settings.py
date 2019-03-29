@@ -184,5 +184,10 @@ LOGGING = {
     },
 }
 
+LOGIN_URL = "/account/login/"
+
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/account/login'
+
+STRIPE_PUBLIC_KEY = 'pk_test_hDsdcs1ExNLnKNmCbXDCBxNC00GKgsxJHr'
+STRIPE_SECRET_KEY = 'sk_test_W4S9UUaXEACTK0mIyvAqnHYl00WB0zUPJ8'

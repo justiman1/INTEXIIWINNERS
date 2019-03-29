@@ -3,6 +3,9 @@ from django.conf import settings
 from django.urls import include, path
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from decimal import Decimal
+import stripe
+
+TAX_RATE = Decimal("0.05")
 
 # Create your models here.
 class Category(models.Model):
@@ -47,7 +50,7 @@ class ProductImage(models.Model):
     product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='images')
 
     def image_url(self):
-    # return an absolute URL to this image. 
+    # return an absolute URL to this image.
         return settings.STATIC_URL + "catalog/media/products/" + self.filename
 
 
@@ -62,3 +65,27 @@ class Sale(models.Model):
         tax = models.DecimalField(max_digits=7, decimal_places=2, default=Decimal(0))
         total = models.DecimalField(max_digits=7, decimal_places=2, default=Decimal(0))
         charge_id = models.TextField(null=True, default=None)   # successful charge id from stripe
+
+        def recalculate(self):
+            self.subtotal = Decimal("0.00")
+            self.total = Decimal("0.00")
+            for si in SaleItem.objects.filter(sale=self, status='A'):
+                self.subtotal += si.quantity * si.price
+            self.tax = (self.subtotal * TAX_RATE)
+            self.total = (self.subtotal + self.tax)
+
+        #def finalize(self, stripeToken):
+
+
+class SaleItem(models.Model):
+        STATUS_CHOICES = [
+            ( 'A', 'Active' ),
+            ( 'D', 'Deleted' ),
+        ]
+        status = models.CharField(max_length=1, default=STATUS_CHOICES[0][0], choices=STATUS_CHOICES)
+        sale = models.ForeignKey("Sale", on_delete=models.PROTECT, related_name="items")
+        product = models.ForeignKey("Product", on_delete=models.PROTECT)
+        quantity = models.IntegerField(default=0)
+        price = models.DecimalField(max_digits=7, decimal_places=2, default=Decimal(0))
+        class Meta:
+            ordering = [ 'product__name' ]
