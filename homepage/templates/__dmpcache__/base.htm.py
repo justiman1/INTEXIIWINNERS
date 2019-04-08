@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1551054351.0407205
+_modified_time = 1554736025.490101
 _enable_loop = True
-_template_filename = 'C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/homepage/templates/base.htm'
+_template_filename = 'C:/Users/justi/OneDrive/Desktop/School/Winter 2019/INTEX/sprint/homepage/templates/base.htm'
 _template_uri = 'base.htm'
 _source_encoding = 'utf-8'
 import django_mako_plus
@@ -21,22 +21,22 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        request = context.get('request', UNDEFINED)
-        def center_column():
-            return render_center_column(context._locals(__M_locals))
-        def left_column():
-            return render_left_column(context._locals(__M_locals))
-        def navbar_items():
-            return render_navbar_items(context._locals(__M_locals))
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
-        def title():
-            return render_title(context._locals(__M_locals))
         def right_column():
             return render_right_column(context._locals(__M_locals))
+        def left_column():
+            return render_left_column(context._locals(__M_locals))
         user = context.get('user', UNDEFINED)
+        def center_column():
+            return render_center_column(context._locals(__M_locals))
+        def title():
+            return render_title(context._locals(__M_locals))
+        request = context.get('request', UNDEFINED)
+        def navbar_items():
+            return render_navbar_items(context._locals(__M_locals))
         self = context.get('self', UNDEFINED)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('<!DOCTYPE html>\r\n<html>\r\n    <meta charset="UTF-8">\r\n    <head>\r\n\r\n        <title>Sprint 1 &mdash; ')
+        __M_writer('<!DOCTYPE html>\r\n<html>\r\n    <meta charset="UTF-8">\r\n    <head>\r\n\r\n        <title> &mdash; ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'title'):
             context['self'].title(**pageargs)
         
@@ -52,7 +52,7 @@ def render_body(context,**pageargs):
         __M_writer('\r\n\r\n')
         __M_writer('        <link rel="icon" type="image/png" href="')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( STATIC_URL ))
-        __M_writer('homepage/media/byu.png">\r\n\r\n    </head>\r\n    <body>\r\n\r\n        <div id="maintenance_container">\r\n            <div id="maintenance_message" class="alert alert-danger center-block">The server is going offline tonight for two hours.</div>\r\n        </div>\r\n\r\n        <header id="header">\r\n\r\n            <img src="')
+        __M_writer('homepage/media/byu.png">\r\n\r\n    </head>\r\n    <body>\r\n<!-- \r\n        <div id="maintenance_container">\r\n            <div id="maintenance_message" class="alert alert-danger center-block">The server is going offline tonight for two hours.</div>\r\n        </div> -->\r\n\r\n        <header id="header">\r\n\r\n            <img src="')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( STATIC_URL ))
         __M_writer('homepage/media/byu.png" alt="byu logo" id="image"/>\r\n                <br>\r\n                <ul class="nav nav-tabs justify-content-end">\r\n                    <nav class="navbar">\r\n                        ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'navbar_items'):
@@ -155,6 +155,6 @@ def render_right_column(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/homepage/templates/base.htm", "uri": "base.htm", "source_encoding": "utf-8", "line_map": {"18": 82, "20": 0, "39": 2, "44": 7, "45": 10, "46": 10, "47": 10, "48": 13, "49": 13, "50": 16, "51": 17, "52": 17, "53": 20, "54": 20, "55": 20, "56": 31, "57": 31, "62": 36, "63": 37, "64": 37, "65": 38, "66": 38, "67": 39, "68": 39, "69": 41, "70": 42, "71": 50, "72": 51, "73": 53, "78": 62, "83": 68, "88": 74, "89": 82, "90": 83, "91": 83, "97": 7, "108": 35, "114": 35, "120": 60, "126": 60, "132": 66, "138": 66, "144": 72, "150": 72, "156": 150}}
+{"filename": "C:/Users/justi/OneDrive/Desktop/School/Winter 2019/INTEX/sprint/homepage/templates/base.htm", "uri": "base.htm", "source_encoding": "utf-8", "line_map": {"18": 82, "20": 0, "39": 2, "44": 7, "45": 10, "46": 10, "47": 10, "48": 13, "49": 13, "50": 16, "51": 17, "52": 17, "53": 20, "54": 20, "55": 20, "56": 31, "57": 31, "62": 36, "63": 37, "64": 37, "65": 38, "66": 38, "67": 39, "68": 39, "69": 41, "70": 42, "71": 50, "72": 51, "73": 53, "78": 62, "83": 68, "88": 74, "89": 82, "90": 83, "91": 83, "97": 7, "108": 35, "114": 35, "120": 60, "126": 60, "132": 66, "138": 66, "144": 72, "150": 72, "156": 150}}
 __M_END_METADATA
 """

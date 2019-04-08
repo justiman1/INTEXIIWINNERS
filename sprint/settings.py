@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django_mako_plus',
     'account',
     'homepage',
+    'prescriber',
+    'drug',
     'catalog',
 
 ]
