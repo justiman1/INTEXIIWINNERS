@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
+import stripe
 import os
 import shutil
 
@@ -191,3 +192,5 @@ LOGOUT_REDIRECT_URL = '/account/login'
 
 STRIPE_PUBLIC_KEY = 'pk_test_hDsdcs1ExNLnKNmCbXDCBxNC00GKgsxJHr'
 STRIPE_SECRET_KEY = 'sk_test_W4S9UUaXEACTK0mIyvAqnHYl00WB0zUPJ8'
+
+stripe.api_key = STRIPE_SECRET_KEY

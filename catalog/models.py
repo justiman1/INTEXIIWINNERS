@@ -4,6 +4,7 @@ from django.urls import include, path
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from decimal import Decimal
 import stripe
+from datetime import datetime
 
 TAX_RATE = Decimal("0.05")
 
@@ -67,14 +68,39 @@ class Sale(models.Model):
         charge_id = models.TextField(null=True, default=None)   # successful charge id from stripe
 
         def recalculate(self):
-            self.subtotal = Decimal("0.00")
-            self.total = Decimal("0.00")
+            self.subtotal = 0
+            self.tax = 0
+            self.total = 0
             for si in SaleItem.objects.filter(sale=self, status='A'):
                 self.subtotal += si.quantity * si.price
             self.tax = (self.subtotal * TAX_RATE)
             self.total = (self.subtotal + self.tax)
 
-        #def finalize(self, stripeToken):
+        def finalize(self, stripeToken):
+            if self.purchased is not None:
+                raise ValueError('this sale has already been finalized.')
+
+            for si in SaleItem.objects.filter(sale=self, status='A'):
+                if(si.product.quantity <= si.quantity):
+                    raise ValueError('insufficient ' + si.product.name)
+
+            self.recalculate()
+
+            charge = stripe.Charge.create(
+                amount=round(int(self.total * Decimal("100.00")), 2),
+                currency='usd',
+                description='Example Charge',
+                source=stripeToken,
+            )
+
+
+            self.purchased = datetime.now()    
+            self.charge_id = charge['id']
+            self.save()
+
+            for si in SaleItem.objects.filter(sale = self, status='A'):
+                si.product.quantity -= si.quantity
+                si.product.save()
 
 
 class SaleItem(models.Model):

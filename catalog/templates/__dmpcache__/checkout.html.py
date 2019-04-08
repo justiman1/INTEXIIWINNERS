@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1553891756.9182646
+_modified_time = 1553895504.9307804
 _enable_loop = True
 _template_filename = 'C:/Users/justi/OneDrive/Desktop/School/Winter 2019/IS 413/sprint/catalog/templates/checkout.html'
 _template_uri = 'checkout.html'
@@ -32,11 +32,11 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        form = context.get('form', UNDEFINED)
         def center_column():
             return render_center_column(context._locals(__M_locals))
-        form = context.get('form', UNDEFINED)
-        self = context.get('self', UNDEFINED)
         stripeTotal = context.get('stripeTotal', UNDEFINED)
+        self = context.get('self', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
         __M_writer('\r\n\r\n')
@@ -53,11 +53,11 @@ def render_body(context,**pageargs):
 def render_center_column(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        form = context.get('form', UNDEFINED)
         def center_column():
             return render_center_column(context)
-        form = context.get('form', UNDEFINED)
-        self = context.get('self', UNDEFINED)
         stripeTotal = context.get('stripeTotal', UNDEFINED)
+        self = context.get('self', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n\r\n<form action="" method="post">\r\n    \r\n        <table>\r\n        ')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( form.as_table()))

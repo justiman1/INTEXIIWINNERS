@@ -19,23 +19,4 @@ def process_request(request):
 
     return request.dmp.render('cart.html', context)
 
-# def remove(request, saleitem:cmod.SaleItem):
-#     cart = request.user.get_shopping_cart()
-#     SI = cmod.SaleItem.objects.filter(status = 'A', sale = cart)
-#     for i in SI:
-#         if i.product == saleitem:
-#             i.status = 'D'
-
-#     SI = cmod.SaleItem.objects.filter(status = 'A', sale = cart)
-#     cart.recalculate()
-#     cart.save()
-
-#     context = {
-#         'cart': cart,
-#         'SI': SI,
-#     }
-
-#     return request.dmp.render('cart.html', context)
-
-
 

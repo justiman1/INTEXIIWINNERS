@@ -3,6 +3,7 @@ from django_mako_plus import view_function, jscontext
 from catalog import models as cmod
 from account import models as pmod
 from django import forms
+import stripe
 
 
 ###################################
